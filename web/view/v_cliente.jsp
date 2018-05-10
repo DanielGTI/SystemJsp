@@ -43,11 +43,15 @@
                         <div class="clearfix"></div>
                     </div>
                     <div class="x_content">
-                        <jsp:useBean id="dollar" class="beans.Calculo" type="beans.Calculo" scope="page"/>
+                        <jsp:useBean id="valores" class="beans.Calculo" type="beans.Calculo" scope="page"/>
                         
                         CADASTRO DO CLIENTE....
                         R$ 100,00 = U$ 
-                        <%= dollar.ConverterDolar(100.0)%>
+                        <%= valores.ConverterDolar(100.0)%>
+                        <br>
+                        R$ 100,00 = Euros 
+                        <%= valores.ConverterEuro(100.0)%>
+                        
 
 
                     </div>
