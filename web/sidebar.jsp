@@ -25,7 +25,7 @@
                 <img src="images/img.jpg" alt="..." class="img-circle profile_img">
               </div>
               <div class="profile_info">
-                <span>Welcome,</span>
+                <span>Bem Vindo,</span>
                 <h2>
                     <%                    
                         out.print(session.getAttribute("user"));
