@@ -19,6 +19,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `system_jsp`
 --
+CREATE DATABASE IF NOT EXISTS `system_jsp` DEFAULT CHARACTER SET utf8 COLLATE utf8_general_ci;
+USE `system_jsp`;
 
 -- --------------------------------------------------------
 

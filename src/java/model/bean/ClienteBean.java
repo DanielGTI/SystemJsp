@@ -16,12 +16,6 @@ public class ClienteBean {
         this.apelido = apelido;
     }
 
-
-     
-    
-    
-    
-    
     public String getNome() {
         return nome;
     }

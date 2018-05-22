@@ -38,12 +38,12 @@ public class UsuarioDAO {
         return listUser;
     }
 
-    public void cadastrar(UsuarioBean aluno) {
+    public void cadastrar(UsuarioBean usuario) {
         String sql = "insert into usuario(nome,senha) values(?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, aluno.getNome());
-            ps.setString(2, aluno.getPwd());
+            ps.setString(1, usuario.getNome());
+            ps.setString(2, usuario.getSenha());
             ps.executeUpdate();
             ps.close();
             con.close();

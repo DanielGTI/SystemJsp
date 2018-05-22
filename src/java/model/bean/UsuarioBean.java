@@ -5,11 +5,11 @@ package model.bean;
 public class UsuarioBean {
     int id;
     String nome;
-    String pwd;
+    String senha;
 
-    public UsuarioBean(String nome, String pwd) {
+    public UsuarioBean(String nome, String senha) {
         this.nome = nome;
-        this.pwd = pwd;
+        this.senha = senha;
     }   
     
     public int getId() {
@@ -28,11 +28,11 @@ public class UsuarioBean {
         this.nome = nome;
     }
 
-    public String getPwd() {
-        return pwd;
+    public String getSenha() {
+        return senha;
     }
 
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
+    public void setSenha(String senha) {
+        this.senha = senha;
     }
 }
