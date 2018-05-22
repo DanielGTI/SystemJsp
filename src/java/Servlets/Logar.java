@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package Servlets;
 
 import java.io.IOException;
@@ -17,11 +13,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import model.dao.UsuarioDAO;
 
-/**
- *
- * @author internet
- */
+
 @WebServlet(name = "Logar", urlPatterns = {"/Logar"})
 public class Logar extends HttpServlet {
 
@@ -35,20 +29,28 @@ public class Logar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        
+        
+        
+        
         try {
+            
+            UsuarioDAO user = new UsuarioDAO();
+            
+            
             String login = request.getParameter("user");
             String senha = request.getParameter("senha");
 
             HttpSession session = request.getSession();
 
-            if (login.equals("daniel") && senha.equals("1234")) {
+            if (user.autenticar(login, senha)) {
                 response.sendRedirect("cliente.jsp");
                 session.setAttribute("usuario", login);
                 session.setMaxInactiveInterval(60 * 5);
 
             } else {
                 response.sendRedirect("login.jsp");
-                session.setAttribute("usuario", "");
+                session.invalidate();
             }
         } catch (NullPointerException e) {
             response.sendRedirect("login.jsp");
